@@ -18,7 +18,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MusicalActivity {
     private HrdMap mMap;
     private HrdConvas mConvas;
 

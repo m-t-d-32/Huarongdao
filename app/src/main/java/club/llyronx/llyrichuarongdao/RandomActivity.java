@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class RandomActivity extends AppCompatActivity {
+public class RandomActivity extends MusicalActivity {
 
     private byte [] mapdata;
     @Override

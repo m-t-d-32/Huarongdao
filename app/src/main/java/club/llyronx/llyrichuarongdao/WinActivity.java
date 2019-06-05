@@ -14,14 +14,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 
-public class WinActivity extends AppCompatActivity {
+public class WinActivity extends MusicalActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (StartActivity.mPlayer != null && !StartActivity.mPlayer.isPlaying()){
-            StartActivity.mPlayer.start();
-        }
         setContentView(R.layout.activity_win);
         TextView textTitle = findViewById(R.id.text_title);
         textTitle.setTypeface(StartActivity.allTypefaces);

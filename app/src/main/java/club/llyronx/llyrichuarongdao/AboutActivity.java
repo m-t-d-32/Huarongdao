@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends MusicalActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

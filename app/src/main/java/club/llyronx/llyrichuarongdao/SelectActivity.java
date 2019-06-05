@@ -25,7 +25,7 @@ import java.util.Random;
 
 import static android.util.TypedValue.COMPLEX_UNIT_PX;
 
-public class SelectActivity extends AppCompatActivity{
+public class SelectActivity extends MusicalActivity{
 
 
     private static final String ANIMATIONFILENAME_UNUSED = "animations/muzli.json";

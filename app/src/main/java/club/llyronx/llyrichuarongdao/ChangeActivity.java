@@ -14,7 +14,7 @@ import java.util.Random;
 
 import static android.graphics.Bitmap.Config.RGB_565;
 
-public class ChangeActivity extends AppCompatActivity {
+public class ChangeActivity extends MusicalActivity {
 
     private static final int BACKGROUND_WIDTH = 1024, BACKGROUND_HEIGHT = 768;
     public static Drawable mNextBackground = null;

@@ -11,9 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class StartActivity extends AppCompatActivity {
-
-    public static MediaPlayer mPlayer;
+public class StartActivity extends MusicalActivity {
     public static Typeface allTypefaces;
 
     @Override
@@ -27,9 +25,6 @@ public class StartActivity extends AppCompatActivity {
         TextView mainView = findViewById(R.id.main_textview);
         allTypefaces = Typeface.createFromAsset(getAssets(), "fonts/font.ttf");
         mainView.setTypeface(allTypefaces);
-        mPlayer = MediaPlayer.create(this, R.raw.thais);
-        mPlayer.setLooping(true);
-        mPlayer.start();
         final View cv = getWindow().getDecorView();
         cv.setOnTouchListener(new View.OnTouchListener() {
             private Point nowPos = new Point(0, 0);
@@ -65,14 +60,9 @@ public class StartActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt("time", mPlayer.getCurrentPosition());
-    }
-
-    @Override
     protected void onDestroy() {
-        mPlayer.stop();
         super.onDestroy();
+        mPlayer.stop();
+        mPlayer = null;
     }
 }

@@ -8,9 +8,7 @@
         <item>愿你走出半生\n归来仍是少年</item>
         <item>愿所有的坚持终不被辜负</item>
         <item>心有猛虎\n细嗅蔷薇</item>
-        <item>你是医我的药</item>
         <item>梦碎那天\n风景很美</item>
-        <item>十年饮冰\n难凉热血</item>
         <item>岁月静好\n现世安稳</item>
     </string-array>
 
@@ -24,7 +22,7 @@
     <string name="win_str">你赢了</string>
     <string name="about_str">
         华容道\n
-        Version 1.1\n
+        Version 1.0.1\n
         Powered By LLyronx 2019\n
         All Rights Reserved.
     </string>
