@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_purple"/>
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/change_animate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/text_title"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"
+        app:side_to_side_direction="leftToRight"
+        app:side_to_side_interpolator="interpolator class"
+        app:side_to_side_max_duration="3000"
+        app:side_to_side_min_duration="1000" />
+
+</RelativeLayout>

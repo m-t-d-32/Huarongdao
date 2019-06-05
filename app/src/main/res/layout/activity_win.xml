@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_dark"/>
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/grav"
+        android:layout_centerInParent="true"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:array_colors="@array/red"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="150"
+        app:regular_variance="100"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        app:ball_size_from_size="3dp"
+        app:ball_size_to_size="6dp"
+        app:animationGenerators="@array/path"
+        app:path_variance_from="-10dp"
+        app:path_variance_to="12dp"
+        app:path="@string/circle"
+        app:path_original_width="1000"
+        app:path_original_height="1000"
+        app:path_min_duration="1000"
+        app:path_max_duration="2000"
+        />
+
+</RelativeLayout>

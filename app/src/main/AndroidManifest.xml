@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="club.llyronx.llyrichuarongdao"
+    android:versionCode="1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon_front"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon_front"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".RandomActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".AboutActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SelectActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WinActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".StartActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ChangeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>

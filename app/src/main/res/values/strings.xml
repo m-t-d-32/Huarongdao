@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">华容道</string>
+
+    <string-array name="changeTexts">
+        <item>我们已经走了太远\n忘记了为什么要出发</item>
+        <item>五岁那年\n我抓住了一只蝉\n就以为抓住了整个夏天</item>
+        <item>在年华里相遇\n在回忆中相安</item>
+        <item>愿你走出半生\n归来仍是少年</item>
+        <item>愿所有的坚持终不被辜负</item>
+        <item>心有猛虎\n细嗅蔷薇</item>
+        <item>你是医我的药</item>
+        <item>梦碎那天\n风景很美</item>
+        <item>十年饮冰\n难凉热血</item>
+        <item>岁月静好\n现世安稳</item>
+    </string-array>
+
+    <string name="circle">
+        M527.023,71.8233 C780.213,71.8233,985.464,277.075,985.464,530.265
+        C985.464,783.455,780.213,988.707,527.023,988.707
+        C273.832,988.707,68.5809,783.455,68.5809,530.265
+        C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
+    </string>
+
+    <string name="win_str">你赢了</string>
+    <string name="about_str">
+        华容道\n
+        Version 1.1\n
+        Powered By LLyronx 2019\n
+        All Rights Reserved.
+    </string>
+    <string name="random_str">每一刻都是崭新的\n  永远也不会再来</string>
+</resources>
