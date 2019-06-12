@@ -68,7 +68,6 @@ public class SelectActivity extends MusicalActivity{
     private Button mSubmitButton;
     private int[] mMapPositions;
     private TextView mHintInfo;
-    private HashMap<String, Integer> userInfo = new HashMap<>();
 
     public static int [] generateRandomNumbers(int allCount, int selectCount){
         int []rawShuffled = new int[allCount];
@@ -146,7 +145,17 @@ public class SelectActivity extends MusicalActivity{
     }
 
     private void addButtonsByMaps(){
-        setUserInfo();
+        String userRecordFile = "record.raw";
+        HashMap<String, Integer> userInfo = new HashMap<>();
+        try {
+            FileInputStream istream = openFileInput(userRecordFile);
+            userInfo = HrdReader.readRecordsFromRawText(istream);
+            istream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         mMapPositions = generateRandomNumbers(WIDTHCOUNT * HEIGHTCOUNT, MAPFILENAMES.length);
         for (int i = 0; i < mMapPositions.length; ++i){
             final NumberedLottieAnimationView button = mButtons[i];
@@ -237,19 +246,6 @@ public class SelectActivity extends MusicalActivity{
         //submitbutton
         mSubmitButton = new Button(this);
         mMainLayout.addView(mSubmitButton);
-    }
-
-    private void setUserInfo(){
-        String userRecordFile = "record.raw";
-        try {
-            FileInputStream istream = openFileInput(userRecordFile);
-            userInfo = HrdReader.readRecordsFromRawText(istream);
-            istream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     private void addHintTextView() {

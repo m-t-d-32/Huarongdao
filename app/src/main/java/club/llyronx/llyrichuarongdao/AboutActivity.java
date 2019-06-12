@@ -27,6 +27,8 @@ public class AboutActivity extends MusicalActivity {
             }
         });
         TextView mainTextView = findViewById(R.id.main_textview);
+        TextView thanksTextView = findViewById(R.id.thanks_textView);
         mainTextView.setTypeface(StartActivity.allTypefaces);
+        thanksTextView.setTypeface(StartActivity.allTypefaces);
     }
 }

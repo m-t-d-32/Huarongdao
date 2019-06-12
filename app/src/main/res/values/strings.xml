@@ -20,11 +20,22 @@
     </string>
 
     <string name="win_str">你赢了</string>
+
     <string name="about_str">
-        华容道\n
-        Version 1.0.1\n
+        \n\n华容道\n
+        Version 1.1.1\n
         Powered By LLyronx 2019\n
         All Rights Reserved.
+    </string>
+
+    <string name="thanks_str">
+        <b>特别鸣谢：\n\n</b>
+        背景音乐：Alexander Nakarada创作的Chronos \n
+        字体：汉仪小隶书简 \n
+        开源动画库：来自开源网站的Lottie以及Grav \n
+        背景图片素材来自网络，原作者保留权利 \n\n
+
+        <b>感谢您的使用。</b>
     </string>
     <string name="random_str">每一刻都是崭新的\n  永远也不会再来</string>
 </resources>
