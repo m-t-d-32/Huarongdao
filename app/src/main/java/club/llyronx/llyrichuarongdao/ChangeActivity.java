@@ -4,17 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import java.util.Random;
 
 import static android.graphics.Bitmap.Config.RGB_565;
 
-public class ChangeActivity extends MusicalActivity {
+public class ChangeActivity extends HrdBaseActivity {
 
     private static final int BACKGROUND_WIDTH = 1024, BACKGROUND_HEIGHT = 768;
     public static Drawable mNextBackground = null;
@@ -23,8 +21,8 @@ public class ChangeActivity extends MusicalActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change);
-        TextView textTitle = findViewById(R.id.text_title);
-        textTitle.setTypeface(StartActivity.allTypefaces);
+        TextView textTitle = findViewById(R.id.change_texts);
+        textTitle.setTypeface(getTypeface());
         String []titleStrs = getResources().getStringArray(R.array.changeTexts);
         textTitle.setText(titleStrs[new Random().nextInt(titleStrs.length)]);
         final Thread processThread = new Thread() {

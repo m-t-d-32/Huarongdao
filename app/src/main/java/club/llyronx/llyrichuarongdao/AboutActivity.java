@@ -1,12 +1,11 @@
 package club.llyronx.llyrichuarongdao;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class AboutActivity extends MusicalActivity {
+public class AboutActivity extends HrdBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +25,9 @@ public class AboutActivity extends MusicalActivity {
                 return true;
             }
         });
-        TextView mainTextView = findViewById(R.id.main_textview);
-        TextView thanksTextView = findViewById(R.id.thanks_textView);
-        mainTextView.setTypeface(StartActivity.allTypefaces);
-        thanksTextView.setTypeface(StartActivity.allTypefaces);
+        TextView mainTextView = findViewById(R.id.about_main);
+        TextView thanksTextView = findViewById(R.id.about_thanks);
+        mainTextView.setTypeface(getTypeface());
+        thanksTextView.setTypeface(getTypeface());
     }
 }

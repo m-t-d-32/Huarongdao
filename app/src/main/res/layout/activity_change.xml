@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_title"
+        android:id="@+id/change_texts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="32sp"
@@ -19,7 +19,7 @@
         android:id="@+id/change_animate"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignTop="@+id/text_title"
+        android:layout_alignTop="@+id/change_texts"
         android:layout_gravity="center"
         android:layout_marginTop="0dp"
         app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"

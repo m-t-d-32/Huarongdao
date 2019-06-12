@@ -2,7 +2,6 @@ package club.llyronx.llyrichuarongdao;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,15 +9,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class RandomActivity extends MusicalActivity {
+public class RandomActivity extends HrdBaseActivity {
 
     private byte [] mapdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change);
-        TextView textTitle = findViewById(R.id.text_title);
-        textTitle.setTypeface(StartActivity.allTypefaces);
+        TextView textTitle = findViewById(R.id.change_texts);
+        textTitle.setTypeface(getTypeface());
         textTitle.setText(R.string.random_str);
         textTitle.setTextColor(Color.YELLOW);
         final Thread randomThread = new Thread() {

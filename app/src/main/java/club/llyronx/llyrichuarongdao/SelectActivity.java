@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -25,37 +23,11 @@ import java.util.Random;
 
 import static android.util.TypedValue.COMPLEX_UNIT_PX;
 
-public class SelectActivity extends MusicalActivity{
+public class SelectActivity extends HrdBaseActivity {
 
 
     private static final String ANIMATIONFILENAME_UNUSED = "animations/muzli.json";
     private static final String ANIMATIONFILENAME_USED = "animations/used.json";
-    private static final String [] MAPFILENAMES = {
-            "maps/小试牛刀.txt",
-            "maps/一路进军.txt",
-            "maps/一路顺风.txt",
-            "maps/兵分三路.txt",
-            "maps/围而不歼.txt",
-            "maps/将拥曹营.txt",
-            "maps/左右布兵.txt",
-            "maps/指挥若定.txt",
-            "maps/齐头并进.txt",
-            "maps/捷足先登.txt",
-            "maps/峰回路转.txt",
-    };
-    private static final String [] MAPNAMES = {
-            "小试牛刀",
-            "一路进军",
-            "一路顺风",
-            "兵分三路",
-            "围而不歼",
-            "将拥曹营",
-            "左右布兵",
-            "指挥若定",
-            "齐头并进",
-            "捷足先登",
-            "峰回路转",
-    };
     private static final int WIDTHCOUNT = 4;
     private static final int HEIGHTCOUNT = 5;
 
@@ -118,7 +90,7 @@ public class SelectActivity extends MusicalActivity{
                         try {
                             Thread.sleep(1000);
                             Intent intent = new Intent(SelectActivity.this, ChangeActivity.class);
-                            intent.putExtra("filename", MAPFILENAMES[mSelectedMapIndex]);
+                            intent.putExtra("filename", getMapFiles()[mSelectedMapIndex]);
                             startActivity(intent);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
@@ -136,7 +108,7 @@ public class SelectActivity extends MusicalActivity{
         mSubmitButton.setY(mEveryHeight * (HEIGHTCOUNT + 1));
         mSubmitButton.setWidth(width / 3);
         mSubmitButton.setText("确认选择");
-        mSubmitButton.setTypeface(StartActivity.allTypefaces);
+        mSubmitButton.setTypeface(getTypeface());
         mSubmitButton.setTextColor(Color.CYAN);
         mSubmitButton.setGravity(Gravity.CENTER);
         mSubmitButton.setBackgroundColor(Color.TRANSPARENT);
@@ -156,11 +128,11 @@ public class SelectActivity extends MusicalActivity{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mMapPositions = generateRandomNumbers(WIDTHCOUNT * HEIGHTCOUNT, MAPFILENAMES.length);
+        mMapPositions = generateRandomNumbers(WIDTHCOUNT * HEIGHTCOUNT, getMapFiles().length);
         for (int i = 0; i < mMapPositions.length; ++i){
             final NumberedLottieAnimationView button = mButtons[i];
             button.setNumber(i);
-            if (userInfo.containsKey(MAPNAMES[button.getNumber()])){
+            if (userInfo.containsKey(getMapNames()[button.getNumber()])){
                 button.setAnimation(ANIMATIONFILENAME_USED);
             }
             else {
@@ -198,14 +170,14 @@ public class SelectActivity extends MusicalActivity{
         MainLayout(Context context){
             super(context);
             mPaint = new Paint();
-            mPaint.setTypeface(StartActivity.allTypefaces);
+            mPaint.setTypeface(getTypeface());
             mPaint.setColor(Color.WHITE);
             mPaint.setTextSize(mEveryWidth / 4);
         }
 
         private void drawText(Canvas canvas){
             if (mSelectedMapIndex >= 0) {
-                canvas.drawText(MAPNAMES[mSelectedMapIndex],
+                canvas.drawText(getMapNames()[mSelectedMapIndex],
                         mButtons[mSelectedMapIndex].getX() + mEveryWidth,
                         mButtons[mSelectedMapIndex].getY() + mEveryHeight,
                         mPaint);
@@ -229,12 +201,12 @@ public class SelectActivity extends MusicalActivity{
         mBorderWidth = width / 10;
         mEveryWidth = width / (WIDTHCOUNT + 1);
         mEveryHeight = mEveryWidth;
-        mButtons = new NumberedLottieAnimationView[MAPFILENAMES.length];
+        mButtons = new NumberedLottieAnimationView[getMapFiles().length];
         mMainLayout = new MainLayout(this);
         mMainLayout.setBackgroundColor(Color.BLACK);
         setContentView(mMainLayout);
         //buttons
-        mMapPositions = generateRandomNumbers(WIDTHCOUNT * HEIGHTCOUNT, MAPFILENAMES.length);
+        mMapPositions = generateRandomNumbers(WIDTHCOUNT * HEIGHTCOUNT, getMapFiles().length);
         for (int i = 0; i < mMapPositions.length; ++i){
             NumberedLottieAnimationView button = new NumberedLottieAnimationView(this);
             mButtons[i] = button;
@@ -255,7 +227,7 @@ public class SelectActivity extends MusicalActivity{
         int height = dm.heightPixels;
         mHintInfo.setX(mBorderWidth);
         mHintInfo.setY(mBorderWidth);
-        mHintInfo.setTypeface(StartActivity.allTypefaces);
+        mHintInfo.setTypeface(getTypeface());
         mHintInfo.setText("请选择你的关卡：");
         mHintInfo.setTextColor(Color.LTGRAY);
         mHintInfo.setBackgroundColor(Color.TRANSPARENT);

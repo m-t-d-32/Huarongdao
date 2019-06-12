@@ -3,28 +3,27 @@ package club.llyronx.llyrichuarongdao;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Typeface;
-import android.media.MediaPlayer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-public class StartActivity extends MusicalActivity {
-    public static Typeface allTypefaces;
+public class StartActivity extends HrdBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (!isTaskRoot()) {
+            finish();
+            return;
+        }
         Resources resource = getResources();
         Configuration configuration = resource.getConfiguration();
         configuration.fontScale = 1.0f;
         resource.updateConfiguration(configuration, resource.getDisplayMetrics());
         setContentView(R.layout.activity_start);
-        TextView mainView = findViewById(R.id.main_textview);
-        allTypefaces = Typeface.createFromAsset(getAssets(), "fonts/font.ttf");
-        mainView.setTypeface(allTypefaces);
+        TextView mainView = findViewById(R.id.start_title);
+        mainView.setTypeface(getTypeface());
         final View cv = getWindow().getDecorView();
         cv.setOnTouchListener(new View.OnTouchListener() {
             private Point nowPos = new Point(0, 0);
@@ -62,7 +61,14 @@ public class StartActivity extends MusicalActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mPlayer.stop();
-        mPlayer = null;
+        if (isTaskRoot()) {
+            getPlayer().stop();
+            setPlayer(null);
+        }
+    }
+
+    public void rankGame(View view) {
+        Intent intent = new Intent(this, RankActivity.class);
+        startActivity(intent);
     }
 }

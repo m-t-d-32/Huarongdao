@@ -103,8 +103,6 @@ public class HrdMapAutoGenerator {
                             applyToBitMap(occupyBitMap, chess, true);
                             if (chesses.get(thisTimeWalkChessIndex) == winMap.getMainChess()){
                                 mainMove = chess.getBegin().x != mainChessWinPos.x;
-                                moveCountAfter = 0;
-                                moveCountBefore = 0;
                             }
                             if (mainMove){
                                 ++moveCountAfter;

@@ -8,7 +8,7 @@
     tools:context=".AboutActivity">
 
     <TextView
-        android:id="@+id/main_textview"
+        android:id="@+id/about_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/main_image"
+        android:id="@+id/about_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
@@ -35,14 +35,14 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/thanks_textView"
+        app:layout_constraintBottom_toTopOf="@+id/about_thanks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_textview"
+        app:layout_constraintTop_toBottomOf="@+id/about_main"
         app:srcCompat="@mipmap/app_icon_front" />
 
     <TextView
-        android:id="@+id/thanks_textView"
+        android:id="@+id/about_thanks"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

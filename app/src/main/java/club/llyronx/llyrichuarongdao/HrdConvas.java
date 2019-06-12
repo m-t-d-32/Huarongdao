@@ -69,7 +69,7 @@ public class HrdConvas extends View {
 
     void setUp(HrdMap map, Chronometer timer) throws IOException {
         mPaint =new Paint();
-        mPaint.setTypeface(StartActivity.allTypefaces);
+        mPaint.setTypeface(HrdBaseActivity.getTypeface());
         mUserOperations = new ArrayList<>();
         setOnTouchListener(new OnTouchListener() {
             @Override

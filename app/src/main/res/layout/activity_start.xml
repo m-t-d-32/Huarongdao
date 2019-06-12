@@ -8,21 +8,21 @@
     tools:context=".StartActivity">
 
     <ImageView
-        android:id="@+id/main_image"
+        android:id="@+id/start_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
         android:onClick="startGame"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/main_textview"
+        app:layout_constraintBottom_toTopOf="@+id/start_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/app_icon_front" />
 
     <TextView
-        android:id="@+id/main_textview"
+        android:id="@+id/start_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -31,6 +31,7 @@
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
         android:text="华容道"
+        android:onClick="rankGame"
         android:gravity="center"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="60sp"

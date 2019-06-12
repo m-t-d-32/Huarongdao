@@ -1,7 +1,6 @@
 package club.llyronx.llyrichuarongdao;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -18,7 +17,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends MusicalActivity {
+public class MainActivity extends HrdBaseActivity {
     private HrdMap mMap;
     private HrdConvas mConvas;
 
@@ -32,7 +31,7 @@ public class MainActivity extends MusicalActivity {
         view.setBackgroundColor(Color.TRANSPARENT);
         view.setHeight(everyHeight);
         view.setWidth(everyWidth);
-        view.setTypeface(StartActivity.allTypefaces);
+        view.setTypeface(getTypeface());
         view.setTextSize(everyWidth / 10);
         view.setTextColor(Color.LTGRAY);
         view.setGravity(Gravity.CENTER);

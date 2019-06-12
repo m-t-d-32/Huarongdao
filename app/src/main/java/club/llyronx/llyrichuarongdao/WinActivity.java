@@ -1,7 +1,6 @@
 package club.llyronx.llyrichuarongdao;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
@@ -14,14 +13,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 
-public class WinActivity extends MusicalActivity {
+public class WinActivity extends HrdBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_win);
-        TextView textTitle = findViewById(R.id.text_title);
-        textTitle.setTypeface(StartActivity.allTypefaces);
+        TextView textTitle = findViewById(R.id.win_texts);
+        textTitle.setTypeface(getTypeface());
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;

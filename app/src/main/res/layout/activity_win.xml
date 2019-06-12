@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_title"
+        android:id="@+id/win_texts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textSize="32sp"
@@ -16,7 +16,7 @@
         android:textColor="@android:color/holo_red_dark"/>
 
     <com.github.glomadrian.grav.GravView
-        android:id="@+id/grav"
+        android:id="@+id/win_animate"
         android:layout_centerInParent="true"
         android:layout_width="400dp"
         android:layout_height="400dp"
