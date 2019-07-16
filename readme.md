@@ -9,3 +9,5 @@
 产品介绍视频：
 [腾讯视频](https://v.qq.com/x/page/h0883tvi6gg.html)
 [Youtube](https://www.youtube.com/watch?v=qVvr3G2DTtY)
+
+操作指南：开始页面点击图标进入选关，点击“华容道”三个字进入排行榜，在“华容道”三个字上左划进入随机关卡，右划进入关于界面。
